@@ -1,7 +1,33 @@
 import React, { Component } from 'react'
 
-export default class Lifecycles extends Component {
+const addProps = (WrappedComponent) => {
+  return class extends Component {
 
+    state = {
+      randomNumber: Math.random()
+    }
+
+    render() {
+      return (
+        <div>
+          <button
+            onClick={()=>{
+              this.setState({randomNumber: Math.random()})
+            }}
+          >
+            Pass New Props
+          </button>
+          <WrappedComponent
+            randomNumber={this.state.randomNumber}
+          />
+        </div>
+      )
+    }
+  }
+}
+
+
+class Lifecycles extends Component {
 
   //class Properties
   static defaultProps = {
@@ -80,6 +106,7 @@ export default class Lifecycles extends Component {
 
   //updating
   componentWillReceiveProps(nextProps) {
+    this.updateTimer = Date.now()
     this.updateLogger('componentWillReceiveProps')
   }
 
@@ -102,5 +129,8 @@ export default class Lifecycles extends Component {
 
   }
 
-
 }
+
+Lifecycles = addProps(Lifecycles)
+
+export default Lifecycles
