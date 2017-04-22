@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Link} from 'react-router-dom'
 import Lifecycles from 'Lifecycles'
 import Home from 'Home'
 import Logger from 'Logger'
+import Hl from 'Hl'
 
 
 export default class AppRouter extends Component {
@@ -33,6 +34,13 @@ export default class AppRouter extends Component {
                   Logger
                 </Link>
               </li>
+              <li>
+                <Link
+                  to='/hl'
+                >
+                  Hl
+                </Link>
+              </li>
             </ul>
           </header>
           <Route
@@ -49,6 +57,11 @@ export default class AppRouter extends Component {
             exact
             path='/logger'
             component={Logger}
+          />
+          <Route
+            exact
+            path='/hl'
+            component={Hl}
           />
         </div>
       </BrowserRouter>

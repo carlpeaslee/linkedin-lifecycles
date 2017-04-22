@@ -64,12 +64,10 @@ const logLifecycles = (Wrapped) => {
 
 class Example extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      number: Math.random(),
-    }
+  state = {
+    number: Math.random(),
   }
+
 
   componentWillUpdate(nextProps, nextState) {
     console.log("do something here", nextProps, nextState)
