@@ -2,7 +2,7 @@
 
 Before we begin to explore all of the individual properties and methods available to us from within a React Component, let's review each of the life cycle methods that we have available to us and see how they relate to each other.
 
-To do this, we're going to build a LifecycleLab component that will help us see when and in what order each of our methods take effect.
+To do this, we're going to use a Lifecycle logging higher order component i created that will help us see when and in what order each of our methods take effect.
 
 There are three different "cycles" of methods which can be triggered during a react component's lifestyle. These cycles are the:
 
